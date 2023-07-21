@@ -16,14 +16,33 @@ function LoginArea() {
     <div>
       {user ? (
         <div>
-          <div className="bg-black">
-            <img src={user.image ? user.image : undefined} />
+          <div className="text-center text-5xl text-orange-400 font-bold mt-5">
+            {user.name}
           </div>
-          <div>you'r logged as {user.name}</div>
-          <button onClick={() => signOut()}>Sign Out</button>
+          <div className="flex align-center justify-center mt-5 ">
+            <img
+              className="w-64 rounded-full"
+              src={user.image ? user.image : undefined}
+            />
+          </div>
+          <div className="text-center mt-10">
+            <button
+              className="bg-orange-400 w-2/6 h-10 rounded-lg text-white font-bold"
+              onClick={() => signOut()}
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
       ) : (
-        <button onClick={() => signIn()}>Sign in</button>
+        <div className="text-center mt-10">
+          <button
+            className="bg-orange-400 w-2/6 h-10 rounded-lg text-white font-bold"
+            onClick={() => signIn()}
+          >
+            Sign in
+          </button>
+        </div>
       )}
     </div>
   )
