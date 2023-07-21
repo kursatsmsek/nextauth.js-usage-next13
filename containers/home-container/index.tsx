@@ -2,7 +2,8 @@ import LoginArea from "@/components/login"
 
 function HomeContainer() {
   return (
-    <div>
+    <div className="h-screen p-10">
+      <div className="text-center text-6xl font-bold">Hello</div>
       <LoginArea />
     </div>
   )
