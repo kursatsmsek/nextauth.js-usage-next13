@@ -1,12 +1,15 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+  throw new Error("Google client ID and client secret are required.")
+}
+
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId:
-        "134521215817-majf3439vilte7o2vhh2tedeem75b7vv.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
 })
